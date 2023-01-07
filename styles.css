@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* variables */
+:root {
+  --clr-dark-bg: #131e1e;
+  --clr-dark-text: #282626;
+  --clr-light-bg: #b8d7b1;
+  --clr-light-text: #d7d5ce;
+}
+.light {
+  background-color: var(--clr-light-bg);
+  color: var(--clr-dark-text);
+}
+.light .article-link {
+  color: var(--clr-dark-text);
+}
+.dark {
+  background-color: var(--clr-dark-bg);
+  color: var(--clr-light-text);
+}
+.dark .article-link {
+  color: var(--clr-light-text);
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem auto 2rem auto;
+  width: 75%;
+  border-bottom: 2px dotted var(--clr-dark-bg);
+  padding-bottom: 1.5rem;
+}
+/* theme button */
+#theme-button {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+label {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+}
+label span {
+  position: absolute;
+}
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: 2px solid var(--clr-dark-bg);
+  background: var(--clr-light-bg);
+  transition: all 0.4s;
+}
+input[type='checkbox']::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: var(--clr-dark-bg);
+  position: absolute;
+  border-radius: 9px;
+  top: 4px;
+  left: 15%;
+  transition: all 0.4s;
+}
+input[type='checkbox']:checked {
+  background-color: var(--clr-dark-bg);
+  border-color: var(--clr-light-bg);
+  transition: all 0.4s;
+}
+input[type='checkbox']:checked::before {
+  background: var(--clr-light-bg);
+  left: 32%;
+}
+input[type='checkbox'] ~ label .on,
+input[type='checkbox']:checked ~ label .off {
+  opacity: 0;
+}
+input[type='checkbox'] ~ label .off,
+input[type='checkbox']:checked ~ label .on {
+  opacity: 1;
+}
+input:focus {
+  outline: 1px dotted var(--clr-dark-bg);
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+.articles-wrapper {
+  width: 75%;
+  margin: 1rem auto 2rem auto;
+  background-color: cornflowerblue;
+}
+.articles-wrapper article {
+  padding: 1.25rem 1rem;
+}
+.articles li {
+  padding: 1rem 0;
+}
