@@ -3,22 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./index.js" defer></script>
+    <meta name="googlebot" content="index,follow" />
+    <meta property="og:title" content="ویب پروگرامنگ" />
+    <meta property="og:description" content="A blog by Kashaan Mahmood" />
+    <meta property="og:url" content="https://kashaan-m.github.io/blog" />
+    <meta
+      property="og:image"
+      content="https://cdni.iconscout.com/illustration/free/thumb/web-development-2933380-2463833.png" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./public/styles/styles.css" />
+    <script src="./public/js/index.js" defer></script>
     <title>{{page.title}}</title>
   </head>
   <body class="light">
-    <!--{{content}}-->
-    <header>
+    <header id="main-header-top">
       <div id="theme-button">
         <input type="checkbox" name="power" id="power" />
         <label for="power">
-          <span class="on">Dark</span>
-          <span class="off">Light</span>
+          <span class="on">Dark Theme</span>
+          <span class="off">Light Theme</span>
         </label>
       </div>
-      <h1 dir="rtl">ویب پروگرامنگ</h1>
+      <h3 dir="rtl">
+        <a href="https://kashaan-m.github.io/blog"> ویب پروگرامنگ </a>
+      </h3>
     </header>
-    <main>{{content}}</main>
+    <main>
+      <section class="articles-wrapper">{{content}}</section>
+    </main>
+    <footer>
+      <a href="https://github.com/Kashaan-M" class="link social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/kashaan-mahmood-63a496a4/" class="link social-link"
+        >LinkedIn</a
+      >
+    </footer>
   </body>
 </html>
