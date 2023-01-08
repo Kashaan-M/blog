@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Regular Expression for Arabic and Similar Languages
-image: https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png
 description: Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression
+href: https://kashaan-m.github.io/blog/regular-expression-for-arabic-and-similar-languages.html
+image: https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png
 ---
 
 <h1 style="font-family:Verdana,sans-serif"> Regular Expression for Arabic and Similar Languages</h1>
@@ -15,19 +16,17 @@ Regular Expressions utilize Unicode code points to perform their operations on c
 
 Unicode has placed the characters or " <span dir="rtl">حروف الہجا </span> " of Urdu, Sindhi, Pashto, Persian, Arabic and Kurdish in a single unicode block called the [Arabic Script](https://en.wikipedia.org/wiki/Arabic_script_in_Unicode) which comprises of 256 code points.
 
-The `\w` character class in regular expressions only matches latin alphabets or the 26 alphabets of English Language hence we cannot use it to match Arabic Script characters.
+The **`\w`** character class in regular expressions only matches latin alphabets or the 26 alphabets of English Language hence we cannot use it to match Arabic Script characters.
 
 But Unicode has introduced some new special character classes to account for non-latin characters and special characters(like emojis).
 
-The one's relevant to our purpose are `\u` and `\p`. You can find more information about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+The one's relevant to our purpose are **`\u`** and **`\p`**. You can find more information about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 
-The following regular expression matches any character which in included in the Arabic Script
+The following regular expression matches any character which is included in the Arabic Script
 
-```javascript
-/\p{Script=Arabic}/u;
-```
+> `/\p{Script=Arabic}/u`
 
-You can further customize this regular expression to test start positions, end positions with `^` and `$` respectively.
+You can further customize this regular expression to test start positions, end positions with **`^`** and **`$`** respectively.
 
 Here are some examples
 

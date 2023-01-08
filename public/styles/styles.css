@@ -44,11 +44,17 @@ p {
 .light .link {
   color: var(--clr-primary-light);
 }
+.light a {
+  color: var(--clr-primary-light);
+}
 .dark {
   background-color: var(--clr-dark-bg);
   color: var(--clr-light-text);
 }
 .dark .link {
+  color: var(--clr-primary-dark);
+}
+.dark a {
   color: var(--clr-primary-dark);
 }
 #main-header-top {
