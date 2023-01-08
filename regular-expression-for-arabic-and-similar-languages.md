@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Regular Expression for Arabic and Similar Languages
+image: https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png
+description: Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression
 ---
 
-# Regular Expression for Arabic and Similar Languages
-
----
+<h1 style="font-family:Verdana,sans-serif"> Regular Expression for Arabic and Similar Languages</h1>
 
 Regular Expressions are a powerful tool for string analysis which are present in all programming languages.
 
@@ -13,7 +13,7 @@ In this article we will discuss how to match `Arabic Script` characters using re
 
 Regular Expressions utilize Unicode code points to perform their operations on characters.
 
-Unicode has placed the characters or " <span dir="rtl">حروف الہجا </span> " of Urdu, Sindhi, Pashto, Persian, Arabic and Kurdish in a single unicode block called the [Arabic Script](https://en.wikipedia.org/wiki/Arabic_(Unicode_block) which comprises of 256 code points.
+Unicode has placed the characters or " <span dir="rtl">حروف الہجا </span> " of Urdu, Sindhi, Pashto, Persian, Arabic and Kurdish in a single unicode block called the [Arabic Script](https://en.wikipedia.org/wiki/Arabic_script_in_Unicode) which comprises of 256 code points.
 
 The `\w` character class in regular expressions only matches latin alphabets or the 26 alphabets of English Language hence we cannot use it to match Arabic Script characters.
 
