@@ -1,6 +1,6 @@
 @import url('./resets.css');
 @font-face {
-  font-family: 'Mehr Nastaliq Web Regular';
+  font-family: MehrNastaliq;
   src: url('../fonts/MehrNastaliqWebRegular.ttf{}');}
 }
 *{},}
@@ -36,7 +36,7 @@ body {
 
 /** Urdu **/ 
 .urdu {
-  font-family: 'Mehr Nastaliq Web Regular','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: MehrNastaliq,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .urdu-p {
   font-size: 1.625rem;
@@ -86,9 +86,9 @@ p {
   position: relative;
 }
 label {
-  width: 88px;
-  height: 20px;
-  line-height: 14px;
+  width: 112px;
+  height: 19px;
+  line-height: 19px;
   position: relative;
 }
 label span {
@@ -97,7 +97,7 @@ label span {
 input[type='checkbox'] {
   -webkit-appearance: none;
   appearance: none;
-  width: 44px;
+  width: 48px;
   height: 24px;
   border-radius: 12px;
   border: 2px solid var(--clr-dark-bg);
@@ -111,7 +111,7 @@ input[type='checkbox']::before {
   background: var(--clr-dark-bg);
   position: absolute;
   border-radius: 9px;
-  top: 4px;
+  top: 7px;
   left: 7%;
   transition: all 0.4s;
 }
@@ -122,7 +122,7 @@ input[type='checkbox']:checked {
 }
 input[type='checkbox']:checked::before {
   background: var(--clr-light-bg);
-  left: 18%;
+  left: 16%;
 }
 input[type='checkbox'] ~ label .on,
 input[type='checkbox']:checked ~ label .off {
