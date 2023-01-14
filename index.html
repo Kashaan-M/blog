@@ -14,10 +14,10 @@ pagination:
 {% for post in posts %}
 <article class="article-container">
   <header>
-    <h3>
+    <h2>
       <a href="{{ post.url }}" class="link" target="_blank">{{post.data.title}}</a>
-    </h3>
-    <small>{{post.data.date}}</small>
+    </h2>
+    <small>{{post.data.date | date: "%b %d, %Y" }}</small>
     <p>{{post.data.description}}</p>
   </header>
 </article>

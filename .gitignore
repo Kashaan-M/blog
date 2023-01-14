@@ -1,9 +1,9 @@
-node_modules/
+*
 
-_includes/ 
+index.html 
 
-posts/
+!_site/
 
-public/
+!.eleventy.js
 
-index.html/
+!package.json
