@@ -5,3 +5,5 @@
 !.eleventy.js
 
 !package.json
+
+!index.html
