@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="googlebot" content="index,follow" />
-    <meta property="og:title" content="Home" />
-    <meta property="og:description" content="A blog by Kashaan Mahmood" />
-    <meta property="og:url" content="https://kashaan-m.github.io/blog/" />
-    <meta property="og:image" content="https://cdni.iconscout.com/illustration/free/thumb/web-development-2933380-2463833.png" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{href}}" />
+    <meta property="og:image" content="{{image}}" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="/public/css/styles.css" />
-    <script src="/public/js/index.js" defer></script>
-    <title>Home</title>
+    <link rel="stylesheet" href="{{'/public/styles/styles.css' | url }}" />
+    <script src="{{'/public/js/index.js' | url }}" defer></script>
+    <title>{{title}}</title>
   </head>
   <body class="light">
     <header id="main-header-top">
@@ -27,19 +27,7 @@
       </h3>
     </header>
     <main>
-      <section class="articles-wrapper">
-
-<article class="article-container">
-  <header>
-    <h2>
-      <a href="/posts/regular-expression-for-arabic-and-similar-languages/" class="link" target="_blank">Regular Expression for Arabic and Similar Languages</a>
-    </h2>
-    <small>Aug 01, 2022</small>
-    <p>Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression</p>
-  </header>
-</article>
-
-</section>
+      <section class="articles-wrapper">{{content}}</section>
     </main>
     <footer>
       <a href="https://github.com/Kashaan-M" class="link social-link">GitHub</a>

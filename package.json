@@ -1,11 +1,12 @@
 {
-  "name": "Web Programming",
+  "name": "blog",
   "version": "1.0.0",
   "description": "A blog",
   "private": "true",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --formats=html,md,png,svg,css,js --serve"
+    "start": "npx @11ty/eleventy --formats=html,md,png,svg,css,js --serve",
+    "build": "env NODE_ENV=production npx @11ty/eleventy --formats=html,md,png,svg,css,js --pathprefix 'blog'"
   },
   "keywords": [],
   "author": "",

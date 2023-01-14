@@ -1,11 +1,4 @@
-*
 
-!_site/
+_site/
 
-!.eleventy.js
-
-!package.json
-
-!index.html
-
-!.nojekyll
+node_modules/
