@@ -1,23 +1,24 @@
 ---
-layout: default
+layout: layouts/base.html
 title: Home
 description: A blog by Kashaan Mahmood
 href: https://kashaan-m.github.io/blog/
 image: https://cdni.iconscout.com/illustration/free/thumb/web-development-2933380-2463833.png
-date: January 8, 2023
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
 ---
 
+{% for post in posts %}
 <article class="article-container">
   <header>
     <h3>
-      <a
-        href="./regular-expression-for-arabic-and-similar-languages.html"
-        class="link"
-        target="_blank"
-        >Regular Expression for Arabic and similar languages</a
-      >
+      <a href="{{ post.url }}" class="link" target="_blank">{{post.data.title}}</a>
     </h3>
-    <small>{{page.date}}</small>
-    <p>Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression</p>
+    <small>{{post.data.date}}</small>
+    <p>{{post.data.description}}</p>
   </header>
 </article>
+{% endfor %}

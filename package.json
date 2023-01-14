@@ -1,0 +1,17 @@
+{
+  "name": "Web Programming",
+  "version": "1.0.0",
+  "description": "A blog",
+  "private": "true",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --formats=html,md,png,svg,css,js --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0"
+  }
+}
