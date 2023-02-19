@@ -8,6 +8,12 @@
 /* http://cbavota.bitbucket.org/syntax-highlighter/  */
 
 /* =====   ===== */
+code {
+  background-color: #e1e1e1;
+  color: black;
+  line-height: 1.8;
+  padding: 1px 3px;
+}
 code[class*='language-'],
 pre[class*='language-'] {
   color: #fff;
