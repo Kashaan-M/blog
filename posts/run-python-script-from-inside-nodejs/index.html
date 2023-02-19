@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="googlebot" content="index,follow" />
+    <meta property="og:title" content="How to run Python Script inside Node JS App" />
+    <meta property="og:description" content="Build Apps that use the best of both Python and Node JS" />
+    <meta property="og:url" content="https://kashaan-m.github.io/blog/run-python-script-from-inside-nodejs.html" />
+    <meta property="og:image" content="https://i.imgur.com/0iPY7je.png" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/blog/public/css/styles.css" />
+    <script src="/blog/public/js/index.js" defer></script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KK4BBC6');
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>How to run Python Script inside Node JS App</title>
+  </head>
+  <body class="light">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KK4BBC6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="main-header-top">
+      <div id="theme-button">
+        <input type="checkbox" name="power" id="power" />
+        <label for="power">
+          <span class="on">Dark Theme</span>
+          <span class="off">Light Theme</span>
+        </label>
+      </div>
+      <h3>
+        <a href="https://kashaan-m.github.io/blog">Web Programming</a>
+      </h3>
+    </header>
+    <main>
+      <section class="articles-wrapper"><h1 style="font-family:Verdana,sans-serif"> How to run Python Script inside Node JS App</h1>
+<p>Python and Node JS have their own capabilities. Node JS is primarily used for building apps that are not computationally intensive.If we need to build apps that require a lot of computing resources then Node JS is not ideal because it runs in a single process.</p>
+<p>However Node JS has a <a href="https://nodejs.org/dist/latest-v18.x/docs/api/child_process.html"><strong>child_process</strong></a> module with which we can run sub processes from inside a Node JS App !</p>
+<p>We will use <code>child_process</code> module in combination with <code>bash scripting</code> to run a Python Script from inside Node JS</p>
+<p><a href="https://github.com/Kashaan-M/computer-programs/blob/main/extract.py">Here</a> is the python script we will be using. This script will read a <code>.docx</code> file , analyze it and write to it. You can find more information about how it works on GitHub.</p>
+<p>Let's start !</p>
+<p>Make a new directory. We can name it node-python-app</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> node-python-app</code></pre>
+<p>We will keep it really simple for now. We will create a Node JS script and execute it from the command line. This way we won't need to setup a <code>package.json</code> file.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> app.js</code></pre>
+<p>Now we have an <code>app.js</code> file inside our <code>node-python-app</code> directory. At this point you should also create an <code>extract.py</code> file inside this directory and copy paste the code from <a href="https://github.com/Kashaan-M/computer-programs/blob/main/extract.py">here</a></p>
+<p>We will need a word document on which <code>extract.py</code> will perform operations. For that you should download <a href="https://github.com/Kashaan-M/computer-programs/blob/main/dickens.docx">this file</a> and place it inside <code>node-python-app</code> directory.</p>
+<p>This file contains styled text from the first chapter of &quot;A tale of Two Cities&quot; by Charles Dickens.</p>
+<p>Now let's create a shell script with which we can automate the execution of python script.We will create a <code>script.sh</code> file in root directory</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> script.sh</code></pre>
+<p>We will add the following code to <code>script.sh</code> file</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment">#! usr/bin/bash</span><br>python3 extract.py dickens.docx<br><span class="token comment">#For Windows</span><br><span class="token comment">#py extract.py dickens.docx</span></code></pre>
+<p>You will need to install Python on your computer. Also you will need the <code>python-docx</code> package in order for <code>extract.py</code> to work as it is a dependecy of it.</p>
+<p>To install <code>python-docx</code> type</p>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> python-docx</code></pre>
+<p>This shall install the package in the global scope. If you are comfortable with creating virutal environments in Python you should do so.</p>
+<p>Finally, our directory should look like this</p>
+<pre class="language-bash"><code class="language-bash"><br>node-python-app<br>-- app.js<br>-- extract.py<br>-- dickens.docx<br>-- script.sh</code></pre>
+<p>Open <code>app.js</code> in text editor and write the below code in it</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> exec <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">'bash script.sh'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stdout<span class="token punctuation">,</span> stderr</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>      <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>        res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>stdout<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code>exec()</code> function is used to run the bash script which contains the commands for running the python script.The first argument to <code>exec()</code> is the shell command and the second argument is a callback function in which we first check if there was an error and, in that case, output error to console.Else,in case of no error, we attach the console output from our python script to our response object which returns it.</p>
+<p>At this point you should check out the <code>dickens.docx</code> file and what it contains.</p>
+<p>Now open your terminal or command prompt or powershell in the <code>node-python-app</code> directory and type</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">node</span> app.js</code></pre>
+<p>After typing above command, check out the <code>dickens.docx</code> file and you will see it has changed!</p>
+<p>Here I have created a very simple server to demonstrate how we can execute a sub process on the server side with Node JS. We can add more business logic and facilitate ourselves by using Express JS but that could be another blog post.</p>
+</section>
+    </main>
+    <footer>
+      <a href="https://github.com/Kashaan-M" class="link social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/kashaan-mahmood-63a496a4/" class="link social-link"
+        >LinkedIn</a
+      >
+    </footer>
+  </body>
+</html>
