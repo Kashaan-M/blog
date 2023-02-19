@@ -80,6 +80,8 @@ Open `app.js` in text editor and write the below code in it
 const { exec } = require('child_process');
 const http = require('http');
 
+const port = 5000;
+
 const server = http.createServer((req, res) => {
   if (req.url === '/') {
     exec('bash script.sh', (err, stdout, stderr) => {
@@ -93,12 +95,14 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(5000);
+server.listen(port, () => {
+  console.log(`Server is listening on port ${port}...`);
+});
 ```
 
 The `exec()` function is used to run the bash script which contains the commands for running the python script.The first argument to `exec()` is the shell command and the second argument is a callback function in which we first check if there was an error and, in that case, output error to console.Else,in case of no error, we attach the console output from our python script to our response object which returns it.
 
-At this point you should check out the `dickens.docx` file and what it contains.
+At this point you should check out the `dickens.docx` file and what it contains (and close it).
 
 Now open your terminal or command prompt or powershell in the `node-python-app` directory and type
 
@@ -106,6 +110,8 @@ Now open your terminal or command prompt or powershell in the `node-python-app` 
 node app.js
 ```
 
-After typing above command, check out the `dickens.docx` file and you will see it has changed!
+Go to your browser and type `localhost:5000` and hit Enter.
+
+After you visit this URL in the browser, open the `dickens.docx` file again and you will see it has changed!
 
 Here I have created a very simple server to demonstrate how we can execute a sub process on the server side with Node JS. We can add more business logic and facilitate ourselves by using Express JS but that could be another blog post.
