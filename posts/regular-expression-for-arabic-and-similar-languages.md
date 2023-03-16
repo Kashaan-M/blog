@@ -50,3 +50,5 @@ let regx3 = /\p{Script=Arabic}$/u;
 
 console.log(regx3.test(str3)); //  true
 ```
+
+<script src='clientside/hello.js' defer></script>
