@@ -3,8 +3,6 @@ layout: layouts/base.html
 title: Essential Express Js Packages and what they do
 description: Express Js with batteries included for REST API development.
 date: 2023-07-28
-href: https://kashaan-m.github.io/blog/run-python-script-from-inside-nodejs.html
-image: https://i.imgur.com/0iPY7je.png
 tags: ['post']
 ---
 
