@@ -3,8 +3,6 @@ layout: layouts/base.html
 title: Essential Express Js Packages and what they do
 description: Express Js with batteries included for REST API development.
 date: 2023-07-28
-href: https://kashaan-m.github.io/blog/posts/essential-express-js-packages-and-what-they-do.html
-image: https://static.toidicode.com/upload/images/nodejs/express/express-framework.png
 tags: ['post']
 ---
 

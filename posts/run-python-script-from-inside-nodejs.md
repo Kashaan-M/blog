@@ -3,8 +3,6 @@ layout: layouts/base.html
 title: How to run Python Script inside Node JS App
 description: Build Apps that use the best of both Python and Node JS
 date: 2023-02-19
-href: https://kashaan-m.github.io/blog/run-python-script-from-inside-nodejs.html
-image: https://i.imgur.com/0iPY7je.png
 tags: ['post']
 ---
 

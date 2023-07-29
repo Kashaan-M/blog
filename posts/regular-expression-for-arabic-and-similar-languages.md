@@ -3,8 +3,6 @@ layout: layouts/base.html
 title: Regular Expression for Arabic and Similar Languages
 description: Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression
 date: 2022-08-01
-href: https://kashaan-m.github.io/blog/regular-expression-for-arabic-and-similar-languages.html
-image: https://cdn-images-1.medium.com/max/1600/1*c8UMCmXFHumTOsRUooKZpw.png
 tags: ['post']
 ---
 
