@@ -96,6 +96,18 @@ Validation helps us protect our business logic from malicious inputs.It also pro
 
 <br>
 
+<br>
+
+### Express Rate Limit
+
+```js
+npm i express-rate-limit
+```
+
+This package prevents Brute Force Attacks.
+
+<br>
+
 ### mocha && chai
 
 ```js
