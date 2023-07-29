@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="googlebot" content="index,follow" />
+    <meta property="og:title" content="Essential Express Js Packages and what they do" />
+    <meta property="og:description" content="Express Js with batteries included for REST API development." />
+    <meta property="og:url" content="https://kashaan-m.github.io/blog/run-python-script-from-inside-nodejs.html" />
+    <meta property="og:image" content="https://i.imgur.com/0iPY7je.png" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/blog/public/css/styles.css" />
+    <script src="/blog/public/js/index.js" defer></script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KK4BBC6');
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>Essential Express Js Packages and what they do</title>
+  </head>
+  <body class="light">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KK4BBC6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="main-header-top">
+      <div id="theme-button">
+        <input type="checkbox" name="power" id="power" />
+        <label for="power">
+          <span class="on" style="font-size: 0.8rem">Dark Theme</span>
+          <span class="off" style="font-size: 0.8rem">Light Theme</span>
+        </label>
+      </div>
+      <h3>
+        <a href="https://kashaan-m.github.io/blog">A Blog</a>
+      </h3>
+    </header>
+    <main>
+      <section class="articles-wrapper"><h1 style="font-family:Verdana,sans-serif">Essential Express Js Packages and what they do</h1>
+<p>Express Js is a minimalist and highly customizable web server. In this post we are going to discuss some packages for REST API development with Express.</p>
+<br>
+<h3>cors</h3>
+<pre class="language-js"><code class="language-js">npm i cors</code></pre>
+<p>Browsers strictly enforce the same-origin policy. This is a security mechanism. But sometimes when we have our backend and frontend on separate servers(or different ports) then this same-origin policy prevents our backend and frontend from communicating with each other.</p>
+<p>In this scenario, <strong>cors</strong> allows us to specify how cross-origin resource sharing can be accomplished between our frontend and backend.</p>
+<br>
+<h3>dotenv</h3>
+<pre class="language-js"><code class="language-js">npm i dotenv</code></pre>
+<p>This is a well known package. This makes it easier to specify environment variables. App Developers usually store their app secrets such as API keys, Database connection details, session secrets and other secrets in a <code>.env</code> file. This package populates the <code>process.env</code> object with the environment variables specified by the developer.</p>
+<br>
+<h3>helmet</h3>
+<pre class="language-js"><code class="language-js">npm i helmet</code></pre>
+<p>Making your app secure for the web is hard. This package helps you setup request headers with pretty good configuration right out of the box.</p>
+<br>
+<h3>express-async-errors</h3>
+<pre class="language-js"><code class="language-js">npm i express<span class="token operator">-</span>async<span class="token operator">-</span>errors</code></pre>
+<p>This package helps you with catching asynchronous errors and handling exceptions.By using this package, you don't have to repeatedly catch every exception in each controller function. Instead, you can <code>require</code> this package in your server.js/app.js file and this package will forward the error/exception to the error-handling middlewares which you setup in your server.js/app.js file.</p>
+<br>
+<h3>express-session</h3>
+<pre class="language-js"><code class="language-js">npm i express<span class="token operator">-</span>session</code></pre>
+<p>This package is used for creating sessions. It creates and serves an encoded cookie to the user with only the session id stored on the cookie. The cookie is configured to be <code>http-only</code> cookie by default and hence cannot be accessed with JavaScript on the client side. Any information we want to store on the cookie gets stored on the server.</p>
+<p>By default this package uses the <em>memoryStore</em> for storing data.It means that the session data is stored in the server memory.This is not ideal for production and hence we need to configure this package to use our database for storing session data.</p>
+<br>
+<p>Many packages are available for this purpose.For example, for postgreSQL we can use <strong>connect-pg-simple</strong> or <strong>connect-session-sequelize</strong>.</p>
+<br>
+<h3>Passport Js</h3>
+<pre class="language-js"><code class="language-js">npm i passport</code></pre>
+<p>This package is used for User Authentication and Authorization. It works hand in hand with express-session and makes it easier to retrieve session data for a user.With this package we can write session data as well.</p>
+<p>This package requires a <em>strategy</em> to be defined for User Authentication/Authorization purposes.</p>
+<p>There are various strategies already available on <strong>npm</strong> for example, username/password, Sign in With Google, Sign in with Facebook etc. All we need to do is install the package for the required strategy. For example, for the username/password strategy we need to install the <code>passport-local</code> package. We can customize the business logic for this as well.</p>
+<br>
+<h3>Joi</h3>
+<pre class="language-js"><code class="language-js">npm i joi</code></pre>
+<p>This package is used for validation. With Joi we define a schema and validate the user's input against that schema. We can also use another validation package alongside Joi; For example the <code>validator</code> package.</p>
+<p>Validation helps us protect our business logic from malicious inputs.It also protects against unwanted database lookups.</p>
+<br>
+<h3>mocha &amp;&amp; chai</h3>
+<pre class="language-js"><code class="language-js">npm i mocha chai</code></pre>
+<p>These packages are used for unit-testing purposes.</p>
+<br>
+<br>
+<h3>Express File Upload</h3>
+<pre class="language-js"><code class="language-js">npm i express<span class="token operator">-</span>fileupload</code></pre>
+<p>This package is used for uploading files to the server.</p>
+<br>
+<h3>xss-clean</h3>
+<pre class="language-js"><code class="language-js">npm i xss<span class="token operator">-</span>clean</code></pre>
+<p>This is an express middleware which escapes JavaScript in <code>req.body</code>, <code>req.params</code>, <code>req.query</code> and thus preventing possible Cross-Site Scripting attacks from malicious user(s).</p>
+<br>
+<h3>bcryptjs</h3>
+<pre class="language-js"><code class="language-js">npm i bcryptjs</code></pre>
+<p>This package makes encrypting users' passwords super easy.It also contains methods for comparing encrypted passwords.</p>
+<br>
+<h3>nodemon</h3>
+<p>This package is used for continuously running our express server during development</p>
+<br>
+<h2>Some other packages and tools</h2>
+<br>
+<p>These packages are database-specific.</p>
+<p>For mongodb, developers usually use the <code>mongoose</code> ODM package and the <code>mongo-sanitize</code> package (or similar for sanitizing user input(s)).</p>
+<p>For postgreSQL, developers usually use <code>pg</code> along with an ORM such as <code>sequelize</code> , prisma etc.</p>
+<p><strong>Note:</strong> In case of using SQL database, it is necessary to sanitize user input.ORMs are generally good at sanitization.For example, <code>sequelize</code> escapes user-provided data for us and uses <a href="%60https://node-postgres.com/features/queries#Parameterized%20query">parameterized queries</a> which prevents SQL injection attacks(in most cases).</p>
+<p>We can validate the user-provided data as an additional guard against SQL injection attacks.</p>
+<p>For sending emails we can use <code>sib-api-v3-sdk</code> package.</p>
+<p>Testing Alternative: <code>Postman</code> desktop software</p>
+<br>
+<hr>
+<br>
+<p>These are the essential packages needed to build a REST API with Express Js.</p>
+<p>Thanks for reading. What other packages are you using ? Please share them so we can benefit :)</p>
+</section>
+    </main>
+    <footer>
+      <a href="https://github.com/Kashaan-M" class="link social-link">GitHub</a>
+      <a
+        href="https://www.linkedin.com/in/kashaan-mahmood-63a496a4/"
+        class="link social-link"
+        >LinkedIn</a
+      >
+    </footer>
+  </body>
+</html>
