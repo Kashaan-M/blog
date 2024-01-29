@@ -178,3 +178,9 @@ footer {
 .dark .social-link:hover {
   border-bottom: 1px solid var(--clr-primary-light);
 }
+.d-inline {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+}
