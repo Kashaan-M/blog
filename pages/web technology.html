@@ -1,27 +1,30 @@
 ---
 layout: layouts/base.html
-title: Home
+title: Web Technology
 description: A blog by Kashaan Mahmood
+tags: ['pagez']
 href: https://kashaan-m.github.io/blog/
 image: https://cdni.iconscout.com/illustration/free/thumb/web-development-2933380-2463833.png
 pagination:
-  data: collections.pagez
+  data: collections.webtech
   size: 10
   reverse: true
-  alias: pages
+  alias: web
 ---
 
+<h3>{{title}}</h3>
 <div style="display: flex; flex-wrap: wrap">
-  {% for page in pages %}
+  {% for page in web %}
   <article class="article-container" style="margin: 0.25em 1em">
     <header>
       <h4 style="display: inline-block">
         <a href="{{ page.url | url }}" class="link" target="_blank"
           >{{page.data.title}}</a
         >
+        <h5 style="font-weight: normal">{{page.data.description}}</h5>
+        <small>{{page.data.date}}</small>
       </h4>
     </header>
   </article>
   {% endfor %}
 </div>
-{{content}}

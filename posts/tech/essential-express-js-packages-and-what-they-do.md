@@ -3,7 +3,7 @@ layout: layouts/base.html
 title: Essential Express Js Packages and what they do
 description: Express Js with batteries included for REST API development.
 date: 2023-07-28
-tags: ['post']
+tags: ['webtech']
 ---
 
 <h1 style="font-family:Verdana,sans-serif">{{title}}</h1>

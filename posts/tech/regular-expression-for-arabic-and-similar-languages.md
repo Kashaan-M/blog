@@ -3,7 +3,7 @@ layout: layouts/base.html
 title: Regular Expression for Arabic and Similar Languages
 description: Identify Arabic, Urdu, Pashto, Sindhi, Persian, Kurdish with this regular expression
 date: 2022-08-01
-tags: ['post']
+tags: ['webtech']
 ---
 
 <h1 style="font-family:Verdana,sans-serif"> Regular Expression for Arabic and Similar Languages</h1>

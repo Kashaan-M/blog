@@ -3,7 +3,7 @@ layout: layouts/base.html
 title: How to run Python Script inside Node JS App
 description: Build Apps that use the best of both Python and Node JS
 date: 2023-02-19
-tags: ['post']
+tags: ['webtech']
 ---
 
 <h1 style="font-family:Verdana,sans-serif"> How to run Python Script inside Node JS App</h1>
